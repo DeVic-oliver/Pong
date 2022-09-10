@@ -2,21 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BallAttributes))]
 public class BallMovement : MonoBehaviour
 {
     public RectTransform _rectTransform;
     public Vector2 _initialPosition;
     public Vector2 _positionToTranslate;
-    public float MoveSpeed = 100f;
 
-    private string _playerTag;
-    private string _obstacleTag;
+    private BallAttributes _ballAttributes;
 
     // Start is called before the first frame update
     void Start()
     {
-        _rectTransform = GetComponent<RectTransform>();
+        InitComponents();
         _initialPosition = _rectTransform.localPosition;
+    }
+    private void InitComponents()
+    {
+        _ballAttributes = GetComponent<BallAttributes>();
+        _rectTransform = GetComponent<RectTransform>();
     }
 
     void Update()
@@ -25,7 +29,7 @@ public class BallMovement : MonoBehaviour
     }
     private void MoveBall()
     {
-        _rectTransform.Translate(_positionToTranslate * MoveSpeed * Time.deltaTime);
+        _rectTransform.Translate(_positionToTranslate * _ballAttributes.MoveSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,9 +39,4 @@ public class BallMovement : MonoBehaviour
             _positionToTranslate = collision.gameObject.GetComponent<BallHitter>().ChangeBallDirection(_positionToTranslate);
         }
     }
-    private void RandomizeMoveSpeed()
-    {
-        MoveSpeed = Random.Range(140f, 180f);
-    }
-
 }
