@@ -188,11 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17cf2e15dea61b64e8de4c60a3687785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1Points: {fileID: 0}
-  Player2Points: {fileID: 0}
+  Player1Points: {fileID: 4121294}
+  Player2Points: {fileID: 1089357540}
   player1Score: {fileID: 1092571569}
   player2Score: {fileID: 214343922}
-  ball: {fileID: 0}
+  ball: {fileID: 1321976978}
 --- !u!4 &21590996
 Transform:
   m_ObjectHideFlags: 0
@@ -1498,6 +1498,7 @@ GameObject:
   - component: {fileID: 1321976974}
   - component: {fileID: 1321976973}
   - component: {fileID: 1321976975}
+  - component: {fileID: 1321976979}
   - component: {fileID: 1321976978}
   - component: {fileID: 1321976976}
   - component: {fileID: 1321976977}
@@ -1640,7 +1641,20 @@ MonoBehaviour:
   _rectTransform: {fileID: 0}
   _initialPosition: {x: 0, y: 0}
   _positionToTranslate: {x: 3, y: 3}
-  MoveSpeed: 100
+--- !u!114 &1321976979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321976971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97af30f8f5c381c48ba8f81c2df7aae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 140
+  IsMoving: 0
 --- !u!1 &1825154490
 GameObject:
   m_ObjectHideFlags: 0
