@@ -45,7 +45,7 @@ public class BallBase : MonoBehaviour
 
     private IEnumerator CooldownToMove()
     {
-        yield return new WaitForSecondsRealtime(CooldownToStartMove);
+        yield return new WaitForSeconds(CooldownToStartMove);
         IsBallAllowedToMove = true;
     }
 }
