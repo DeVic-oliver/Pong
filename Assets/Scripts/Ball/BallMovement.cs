@@ -64,5 +64,23 @@ public class BallMovement : BallBase
         _positionToTranslate.y *= -1;
     }
 
+    /// <summary>
+    /// Randomize the ball direction based in a point on X axis;
+    /// </summary>
+    private void RandomBallMoveDirection()
+    {
+        ChangeXDirection();
+    }
+
+    /// <summary>
+    /// Restarts the ball its to initial position; 
+    /// </summary>
+    public void RestartBallPosition()
+    {
+        _rectTransform.localPosition = _initialPosition;
+        RandomBallMoveDirection();
+        ChangeBallMovePermission(true);
+    }
+
 
 }
