@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseState : GameStateBase
+public class GameOverState : GameStateBase
 {
     public void OnStateEnter(GameStateManager gameState)
     {

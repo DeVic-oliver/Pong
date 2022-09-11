@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayState : MonoBehaviour
+public class PlayState : GameStateBase
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnStateEnter(GameStateManager gameState)
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateState(GameStateManager gameState)
     {
-        
+        throw new System.NotImplementedException();
     }
 }
