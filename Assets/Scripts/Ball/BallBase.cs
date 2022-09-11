@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallBase : MonoBehaviour
 {
+    public float MoveSpeed = 240f;
+    public bool IsBallAllowedToMove;
     // Start is called before the first frame update
     void Start()
     {
