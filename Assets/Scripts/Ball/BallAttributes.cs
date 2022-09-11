@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class BallAttributes : MonoBehaviour
 {
-    public float MoveSpeed = 140f;
+    public float MoveSpeed = 240f;
     public bool IsMoving;
 }
