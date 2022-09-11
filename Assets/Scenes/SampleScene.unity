@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player1Points: {fileID: 4121294}
   Player2Points: {fileID: 1089357540}
+  CanBeginGame: 0
   player1Score: {fileID: 1092571569}
   player2Score: {fileID: 214343922}
   ball: {fileID: 1321976978}
@@ -201,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d19fe4cdd629334d81c7277699cd785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameManager: {fileID: 21590995}
 --- !u!1 &35316823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,18 +1697,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21590994}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 21590995}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: AllowGameBegin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 1
+      - m_Target: {fileID: 1513200441}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &860613379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2131,7 +2145,6 @@ GameObject:
   - component: {fileID: 1321976974}
   - component: {fileID: 1321976973}
   - component: {fileID: 1321976975}
-  - component: {fileID: 1321976979}
   - component: {fileID: 1321976978}
   - component: {fileID: 1321976976}
   - component: {fileID: 1321976977}
@@ -2212,6 +2225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6825105c100b55d40a8ad96b3b97ce37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 240
+  IsBallAllowedToMove: 0
 --- !u!61 &1321976976
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2271,25 +2286,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bf000239a4b9a4088e28e83d3adbba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 240
+  IsBallAllowedToMove: 0
   _rectTransform: {fileID: 0}
   _initialPosition: {x: 0, y: 0}
   _positionToTranslate: {x: 3, y: 3}
   minX: 3
   maxX: 7
---- !u!114 &1321976979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321976971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97af30f8f5c381c48ba8f81c2df7aae1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 200
-  IsMoving: 0
 --- !u!1 &1513200441
 GameObject:
   m_ObjectHideFlags: 0
