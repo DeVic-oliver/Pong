@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BallAttributes))]
-public class BallMovement : MonoBehaviour
+public class BallMovement : BallBase
 {
     public RectTransform _rectTransform;
     public Vector2 _initialPosition;
@@ -12,8 +11,6 @@ public class BallMovement : MonoBehaviour
     [HeaderAttribute("Min and Max X Point Value to Translate")]
     [SerializeField] private float minX;
     [SerializeField] private float maxX;
- 
-    private BallAttributes _ballAttributes;
 
     // Start is called before the first frame update
     void Start()
@@ -23,17 +20,23 @@ public class BallMovement : MonoBehaviour
     }
     private void InitComponents()
     {
-        _ballAttributes = GetComponent<BallAttributes>();
         _rectTransform = GetComponent<RectTransform>();
     }
 
     void Update()
     {
-        MoveBall();
+        CheckIfBallIsAllowedToMove();
+    }
+    private void CheckIfBallIsAllowedToMove()
+    {
+        if (IsBallAllowedToMove) 
+        {
+            MoveBall();
+        }
     }
     private void MoveBall()
     {
-        _rectTransform.Translate(_positionToTranslate * _ballAttributes.MoveSpeed * Time.deltaTime);
+        _rectTransform.Translate(_positionToTranslate * MoveSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
