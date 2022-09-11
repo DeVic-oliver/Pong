@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
+    #region Concrete Game States
     public StartState StartState = new StartState();
     public PlayState PlayState = new PlayState();
     public PauseState PauseState = new PauseState();
     public RestartState RestartState = new RestartState();
     public GameOverState GameOverState = new GameOverState();
-    
-    private GameStateBase _currentState;
+    #endregion;
+
+    [HeaderAttribute("GameObjects to manage")]
+    #region GameObjects
     public GameManager _gameManager;
+    public GameObject MainMenu;
+    public GameObject PauseMenu;
+    #endregion;
+
+    private GameStateBase _currentState;
 
 
     private void Awake()
