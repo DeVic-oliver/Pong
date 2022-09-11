@@ -19,4 +19,10 @@ public class GameScoreHandler : MonoBehaviour
         player1Score.text = Player1Points.Points.ToString();
         player2Score.text = Player2Points.Points.ToString();
     }
+    
+    public void ResetPlayerPoints()
+    {
+        Player1Points.Points = 0;
+        Player2Points.Points = 0;
+    }
 }
