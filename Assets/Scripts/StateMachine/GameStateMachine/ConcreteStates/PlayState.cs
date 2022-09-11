@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class PlayState : PauseGameHandler, GameStateBase
 {
+    private GameStateManager _gameState;
     public void OnStateEnter(GameStateManager gameState)
     {
-        gameState.PauseMenu.SetActive(false);
+        _gameState = gameState;
+        _gameState.PauseMenu.SetActive(false);
         PauseGameBehaviour();
         ChangeMouseCursorBehaviour();
-        gameState._gameManager.AllowBallToMove();
+        _gameState._gameManager.AllowBallToMove();
     }
 
     public void UpdateState(GameStateManager gameState)
     {
-        gameState._gameManager.ball.MoveBall();
-        gameState._gameManager.CheckIfPointWasMade();
-        gameState._gameManager._gameTimeHandler.DecreaseTime();
-        CheckPauseGame(gameState);
+        _gameState._gameManager.ball.MoveBall();
+        _gameState._gameManager.CheckIfPointWasMade();
+        _gameState._gameManager._gameTimeHandler.DecreaseTime();
+        CheckPauseGame(_gameState);
+        CheckGameTime();
     }
 
     protected override void CheckPauseGame(GameStateManager gameState)
@@ -36,5 +39,14 @@ public class PlayState : PauseGameHandler, GameStateBase
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void CheckGameTime()
+    {
+        float gameTime = _gameState._gameManager._gameTimeHandler.CurrentTime;
+        if (gameTime <= 0)
+        {
+            _gameState.SwitchState(_gameState.GameOverState);
+        }
     }
 }
