@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
         UpdateScore();
         if (PointBoundary.IsPointMade)
         {
-            Debug.Log(ball._initialPosition);
             ResetBallPosition();
             PointBoundary.IsPointMade = false;
         }
