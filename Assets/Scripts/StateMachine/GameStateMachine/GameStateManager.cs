@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
+    public static bool ShouldRestartGame;
+
     #region Concrete Game States
     public StartState StartState = new StartState();
     public PlayState PlayState = new PlayState();
@@ -17,6 +19,7 @@ public class GameStateManager : MonoBehaviour
     public GameManager _gameManager;
     public GameObject MainMenu;
     public GameObject PauseMenu;
+    public GameObject GameOverMenu;
     #endregion;
 
     private GameStateBase _currentState;
