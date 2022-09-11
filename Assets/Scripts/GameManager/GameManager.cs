@@ -57,4 +57,9 @@ public class GameManager : MonoBehaviour
     {
         ball.ChangeBallMovePermission(false);
     }
+
+    public void ResumeGame()
+    {
+        PauseGameHandler.ShouldResumeGame = true;
+    }
 }
