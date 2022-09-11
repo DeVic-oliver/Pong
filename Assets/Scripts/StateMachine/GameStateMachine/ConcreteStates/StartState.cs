@@ -6,11 +6,14 @@ public class StartState : GameStateBase
 {
     public void OnStateEnter(GameStateManager gameState)
     {
-        throw new System.NotImplementedException();
+        gameState._gameManager.ChangeBallMovePermission(false);
     }
 
     public void UpdateState(GameStateManager gameState)
     {
-        throw new System.NotImplementedException();
+        if (gameState._gameManager.CanBeginGame)
+        {
+            gameState.SwitchState(gameState.PlayState);
+        }
     }
 }
