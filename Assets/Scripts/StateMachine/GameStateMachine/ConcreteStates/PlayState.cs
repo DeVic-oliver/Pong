@@ -16,6 +16,7 @@ public class PlayState : PauseGameHandler, GameStateBase
     {
         gameState._gameManager.ball.MoveBall();
         gameState._gameManager.CheckIfPointWasMade();
+        gameState._gameManager._gameTimeHandler.DecreaseTime();
         CheckPauseGame(gameState);
     }
 
