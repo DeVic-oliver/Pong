@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
         private set { canBeginGame = value; } 
     }
 
-    [SerializeField] private BallMovement ball;
+    public BallMovement ball;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         CheckIfPointWasMade();
     }
-    private void CheckIfPointWasMade()
+    public void CheckIfPointWasMade()
     {
         if (PointBoundary.IsPointMade)
         {
