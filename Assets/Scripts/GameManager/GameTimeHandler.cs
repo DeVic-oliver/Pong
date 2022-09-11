@@ -7,12 +7,12 @@ public class GameTimeHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI clock;
     [SerializeField] private int maxTime;
 
-    private float currentTime;
+    public float CurrentTime { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
         clock.text = maxTime.ToString();
-        currentTime = maxTime;
+        CurrentTime = maxTime;
     }
 
     // Update is called once per frame
@@ -23,19 +23,19 @@ public class GameTimeHandler : MonoBehaviour
     
     public void DecreaseTime()
     {
-        if(currentTime >= 0)
+        if(CurrentTime >= 0)
         {
-            currentTime -= Time.deltaTime;
+            CurrentTime -= Time.deltaTime;
         }
         ApplyClockTime();
     }
     private void ApplyClockTime()
     {
-        clock.text = currentTime.ToString("N0");
+        clock.text = CurrentTime.ToString("N0");
     }
     public void ResetTime()
     {
-        currentTime = maxTime;
+        CurrentTime = maxTime;
         clock.text = maxTime.ToString();
     }
 }
