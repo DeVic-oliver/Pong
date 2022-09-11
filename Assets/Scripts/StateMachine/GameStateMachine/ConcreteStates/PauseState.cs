@@ -6,12 +6,15 @@ public class PauseState : PauseGameHandler, GameStateBase
 {
     public void OnStateEnter(GameStateManager gameState)
     {
+        gameState.PauseMenu.SetActive(true);
+        ChangeMouseCursorBehaviour();
         PauseGameBehaviour();
     }
 
     public void UpdateState(GameStateManager gameState)
     {
         CheckPauseGame(gameState);
+        CheckIfShouldResumeGame(gameState);
     }
 
     protected override void CheckPauseGame(GameStateManager gameState)
@@ -27,4 +30,21 @@ public class PauseState : PauseGameHandler, GameStateBase
     {
         Time.timeScale = 0;
     }
+
+    protected override void ChangeMouseCursorBehaviour()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void CheckIfShouldResumeGame(GameStateManager gameState)
+    {
+        if (PauseGameHandler.ShouldResumeGame)
+        {
+            PauseGameHandler.IsGamePaused = false;
+            PauseGameHandler.ShouldResumeGame = false;
+            gameState.SwitchState(gameState.PlayState);
+        }
+    }
+ 
 }
