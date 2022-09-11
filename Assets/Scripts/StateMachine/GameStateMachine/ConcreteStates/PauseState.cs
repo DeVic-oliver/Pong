@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseState : PauseGameHandler, GameStateBase
+public class PauseState : PauseGameHandler, GameStateBase, MouseBehaviour
 {
     public void OnStateEnter(GameStateManager gameState)
     {
@@ -15,6 +15,10 @@ public class PauseState : PauseGameHandler, GameStateBase
     {
         CheckPauseGame(gameState);
         CheckIfShouldResumeGame(gameState);
+        if (GameStateManager.ShouldRestartGame)
+        {
+            gameState.SwitchState(gameState.RestartState);
+        }
     }
 
     protected override void CheckPauseGame(GameStateManager gameState)
@@ -31,7 +35,7 @@ public class PauseState : PauseGameHandler, GameStateBase
         Time.timeScale = 0;
     }
 
-    protected override void ChangeMouseCursorBehaviour()
+    public void ChangeMouseCursorBehaviour()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;

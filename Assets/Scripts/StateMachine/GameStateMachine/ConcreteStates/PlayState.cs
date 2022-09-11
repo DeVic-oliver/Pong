@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayState : PauseGameHandler, GameStateBase
+public class PlayState : PauseGameHandler, GameStateBase, MouseBehaviour
 {
     private GameStateManager _gameState;
     public void OnStateEnter(GameStateManager gameState)
@@ -35,7 +35,7 @@ public class PlayState : PauseGameHandler, GameStateBase
     {
         Time.timeScale = 1;
     }
-    protected override void ChangeMouseCursorBehaviour()
+    public void ChangeMouseCursorBehaviour()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
