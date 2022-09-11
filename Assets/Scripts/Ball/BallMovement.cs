@@ -25,18 +25,15 @@ public class BallMovement : BallBase
 
     void Update()
     {
-        CheckIfBallIsAllowedToMove();
+        
     }
-    private void CheckIfBallIsAllowedToMove()
+
+    public void MoveBall()
     {
-        if (IsBallAllowedToMove) 
+        if (IsBallAllowedToMove)
         {
-            MoveBall();
+            _rectTransform.Translate(_positionToTranslate * MoveSpeed * Time.deltaTime);
         }
-    }
-    private void MoveBall()
-    {
-        _rectTransform.Translate(_positionToTranslate * MoveSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
