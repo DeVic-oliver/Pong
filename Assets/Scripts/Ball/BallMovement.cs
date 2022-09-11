@@ -28,6 +28,9 @@ public class BallMovement : BallBase
         
     }
 
+    /// <summary>
+    /// Move the ball when the ball its allowed to move
+    /// </summary>
     public void MoveBall()
     {
         if (IsBallAllowedToMove)
