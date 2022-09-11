@@ -6,9 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public Player Player1Points;
     public Player Player2Points;
+    public bool CanBeginGame = false;
+
     [SerializeField] private TextMeshProUGUI player1Score;
     [SerializeField] private TextMeshProUGUI player2Score;
     [SerializeField] private BallMovement ball;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +36,15 @@ public class GameManager : MonoBehaviour
     private void ResetBallPosition()
     {
         ball._rectTransform.localPosition = ball._initialPosition;
+    }
+
+    public void ChangeBallMovePermission(bool canBallMove)
+    {
+        ball.IsBallAllowedToMove = canBallMove;
+    }
+
+    public void AllowGameBegin()
+    {
+        CanBeginGame = true;
     }
 }
