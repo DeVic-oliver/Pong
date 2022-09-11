@@ -5,7 +5,9 @@ using UnityEngine;
 public class BallBase : MonoBehaviour
 {
     public float MoveSpeed = 240f;
-    public bool IsBallAllowedToMove;
+    public float CooldownToStartMove = 2f;
+    public bool IsBallAllowedToMove { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,25 @@ public class BallBase : MonoBehaviour
         }
     }
 
-    
- 
+    /// <summary>
+    /// Changes the ball movement permission based on a bool param. If true the ball will move after a 2 seconds cooldown. 
+    /// </summary>
+    /// <param name="canBallMove">The ball move permission</param>
+    public void ChangeBallMovePermission(bool canBallMove)
+    {
+        if (canBallMove)
+        {
+            StartCoroutine(CooldownToMove());
+        }
+        else
+        {
+            IsBallAllowedToMove = canBallMove;
+        }
+    }
+
+    private IEnumerator CooldownToMove()
+    {
+        yield return new WaitForSecondsRealtime(CooldownToStartMove);
+        IsBallAllowedToMove = true;
+    }
 }
