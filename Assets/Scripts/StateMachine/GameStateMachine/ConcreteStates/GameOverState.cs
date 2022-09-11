@@ -6,11 +6,10 @@ public class GameOverState : GameStateBase
 {
     public void OnStateEnter(GameStateManager gameState)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("GAME OVER");
     }
 
     public void UpdateState(GameStateManager gameState)
     {
-        throw new System.NotImplementedException();
     }
 }
