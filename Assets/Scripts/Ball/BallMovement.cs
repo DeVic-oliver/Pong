@@ -9,6 +9,10 @@ public class BallMovement : MonoBehaviour
     public Vector2 _initialPosition;
     public Vector2 _positionToTranslate;
 
+    [HeaderAttribute("Min and Max X Point Value to Translate")]
+    [SerializeField] private float minX;
+    [SerializeField] private float maxX;
+ 
     private BallAttributes _ballAttributes;
 
     // Start is called before the first frame update
@@ -34,9 +38,28 @@ public class BallMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<BallHitter>() != null)
+
+        if (collision.gameObject.CompareTag("Player"))
         {
-            _positionToTranslate = collision.gameObject.GetComponent<BallHitter>().ChangeBallDirection(_positionToTranslate);
+            ChangeXDirection();
+        }
+
+        if (collision.gameObject.CompareTag("Boundary"))
+        {
+            ChangeYDirection();
         }
     }
+
+    private void ChangeXDirection()
+    {
+        float newPositionValue = Random.Range(minX, maxX);
+        _positionToTranslate.x = VectorAxisValueChanger.ChangeVectorAxisValue(_positionToTranslate.x, newPositionValue);
+    }
+
+    private void ChangeYDirection()
+    {
+        _positionToTranslate.y *= -1;
+    }
+
+
 }
