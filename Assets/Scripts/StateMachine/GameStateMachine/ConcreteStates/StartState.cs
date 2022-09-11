@@ -6,7 +6,7 @@ public class StartState : GameStateBase
 {
     public void OnStateEnter(GameStateManager gameState)
     {
-        gameState._gameManager.ChangeBallMovePermission(false);
+        gameState._gameManager.DenyBallToMove();
     }
 
     public void UpdateState(GameStateManager gameState)
