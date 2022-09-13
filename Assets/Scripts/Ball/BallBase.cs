@@ -42,7 +42,6 @@ public class BallBase : MonoBehaviour
             IsBallAllowedToMove = canBallMove;
         }
     }
-
     private IEnumerator CooldownToMove()
     {
         yield return new WaitForSeconds(CooldownToStartMove);
