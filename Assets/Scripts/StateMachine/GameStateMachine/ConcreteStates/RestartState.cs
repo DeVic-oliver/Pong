@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RestartState : GameStateBase
+public class RestartState : PauseGameHandler, IGameStateBase
 {
     private float stateChangerCounter = 3f;
     private GameStateManager _gameState;

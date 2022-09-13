@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayState : PauseGameHandler, GameStateBase, MouseBehaviour
+public class PlayState : PauseGameHandler, IGameStateBase, IMouseBehaviour
 {
     private GameStateManager _gameState;
     public void OnStateEnter(GameStateManager gameState)

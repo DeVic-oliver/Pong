@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartState : GameStateBase
+public class StartState : IGameStateBase
 {
     public void OnStateEnter(GameStateManager gameState)
     {

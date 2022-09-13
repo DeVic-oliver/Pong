@@ -22,7 +22,7 @@ public class GameStateManager : MonoBehaviour
     public GameObject GameOverMenu;
     #endregion;
 
-    private GameStateBase _currentState;
+    private IGameStateBase _currentState;
 
 
     private void Awake()
@@ -52,7 +52,7 @@ public class GameStateManager : MonoBehaviour
     {
         _currentState.UpdateState(this);
     }
-    public void SwitchState(GameStateBase newState)
+    public void SwitchState(IGameStateBase newState)
     {
         _currentState = newState;
         _currentState.OnStateEnter(this);
