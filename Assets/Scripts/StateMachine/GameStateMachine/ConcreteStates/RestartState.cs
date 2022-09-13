@@ -37,8 +37,8 @@ public class RestartState : PauseGameHandler, IGameStateBase
         }
         else
         {
-            _gameState.SwitchState(_gameState.PlayState);
             stateChangerCounter = stateChangerCounterValue;
+            _gameStateManager.SwitchState(_gameStateManager.PlayState);
         }
     }
 }
