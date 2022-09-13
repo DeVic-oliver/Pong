@@ -23,12 +23,10 @@ public class RestartState : PauseGameHandler, IGameStateBase
     {
         if(stateChangerCounter > 0)
         {
-            Debug.Log("Entrou no contador do restart");
             stateChangerCounter -= Time.deltaTime;
         }
         else
         {
-            Debug.Log("Mudando para Play State");
             _gameState.SwitchState(_gameState.PlayState);
         }
     }
