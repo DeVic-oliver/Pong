@@ -7,12 +7,13 @@ public class PlayState : PauseGameHandler, IGameStateBase, IMouseBehaviour
     private GameStateManager _gameStateManager;
     public void OnStateEnter(GameStateManager gameState)
     {
-        _gameState.PauseMenu.SetActive(false);
         PauseGameBehaviour();
         _gameStateManager = gameState;
+        DeactiveGameObjects();
         ChangeMouseCursorBehaviour();
         _gameState._gameManager.AllowBallToMove();
     }
+    private void DeactiveGameObjects()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !PauseGameHandler.IsGamePaused)
         {
