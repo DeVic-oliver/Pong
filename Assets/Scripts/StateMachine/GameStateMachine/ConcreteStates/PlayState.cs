@@ -11,15 +11,9 @@ public class PlayState : PauseGameHandler, IGameStateBase, IMouseBehaviour
         DeactiveGameObjects();
         ChangePauseTimeScale();
         ChangeMouseCursorBehaviour();
-        _gameState._gameManager.AllowBallToMove();
     }
     private void DeactiveGameObjects()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !PauseGameHandler.IsGamePaused)
-        {
-            PauseGameHandler.IsGamePaused = true;
-            gameState.SwitchState(gameState.PauseState);
-        }
     }
     protected override void ChangePauseTimeScale()
     {
@@ -41,7 +35,6 @@ public class PlayState : PauseGameHandler, IGameStateBase, IMouseBehaviour
     }
     private void CheckGameTime()
     {
-        float gameTime = _gameState._gameManager._gameTimeHandler.CurrentTime;
         float gameTime = _gameStateManager._gameManager._gameTimeHandler.CurrentTime;
         if (gameTime <= 0)
         {
