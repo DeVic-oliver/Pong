@@ -11,7 +11,7 @@ public class PauseState : PauseGameHandler, IGameStateBase, IMouseBehaviour, IRe
         _gameStateManager = gameState;
         SetGameObjectsActive();
         ChangeMouseCursorBehaviour();
-        PauseGameBehaviour();
+        ChangePauseTimeScale();
     }
 
     public void UpdateState(GameStateManager gameState)
@@ -35,7 +35,7 @@ public class PauseState : PauseGameHandler, IGameStateBase, IMouseBehaviour, IRe
         }
     }
 
-    protected override void PauseGameBehaviour()
+    protected override void ChangePauseTimeScale()
     {
         Time.timeScale = 0;
     }
