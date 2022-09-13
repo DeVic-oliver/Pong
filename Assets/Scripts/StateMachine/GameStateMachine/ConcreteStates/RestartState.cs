@@ -8,7 +8,6 @@ public class RestartState : PauseGameHandler, IGameStateBase
     private GameStateManager _gameStateManager;
     public void OnStateEnter(GameStateManager gameState)
     {
-        Debug.Log("Entrou no restart state");
         _gameStateManager = gameState;
         gameState._gameManager._gameTimeHandler.ResetTime();
         gameState._gameManager.ball.RestartBallPosition();
