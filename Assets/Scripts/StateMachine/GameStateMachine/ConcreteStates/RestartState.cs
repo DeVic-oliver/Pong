@@ -12,6 +12,7 @@ public class RestartState : PauseGameHandler, IGameStateBase
         _gameStateManager = gameState;
         stateChangerCounter = stateChangerCounterValue;
         ChangePauseTimeScale();
+        
         gameState._gameManager._gameTimeHandler.ResetTime();
         gameState._gameManager.ball.RestartBallPosition();
         gameState._gameManager._gameScoreHandler.ResetPlayerPoints();
