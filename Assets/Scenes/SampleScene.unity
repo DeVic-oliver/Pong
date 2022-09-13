@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4446671519919696304, guid: 4275b0f8cce22cd4e96a69816ceea238, type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4446671519919696304, guid: 4275b0f8cce22cd4e96a69816ceea238, type: 3}
       propertyPath: m_Pivot.y
@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4446671519919696304, guid: 4275b0f8cce22cd4e96a69816ceea238, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4446671519919696304, guid: 4275b0f8cce22cd4e96a69816ceea238, type: 3}
       propertyPath: m_AnchorMax.y
@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4446671519919696304, guid: 4275b0f8cce22cd4e96a69816ceea238, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4446671519919696304, guid: 4275b0f8cce22cd4e96a69816ceea238, type: 3}
       propertyPath: m_AnchorMin.y
@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4446671519919696304, guid: 4275b0f8cce22cd4e96a69816ceea238, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1804
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 4446671519919696304, guid: 4275b0f8cce22cd4e96a69816ceea238, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3677,7 +3677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 240
-  CooldownToStartMove: 2
+  CooldownToStartMove: 1
 --- !u!61 &1321976976
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3738,7 +3738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 240
-  CooldownToStartMove: 2
+  CooldownToStartMove: 1
   _rectTransform: {fileID: 0}
   _initialPosition: {x: 0, y: 0}
   _positionToTranslate: {x: 3, y: 3}
@@ -5229,7 +5229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4446671519919696304, guid: 4275b0f8cce22cd4e96a69816ceea238, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 76
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4446671519919696304, guid: 4275b0f8cce22cd4e96a69816ceea238, type: 3}
       propertyPath: m_AnchoredPosition.y
