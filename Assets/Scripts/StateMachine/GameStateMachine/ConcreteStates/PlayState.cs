@@ -11,6 +11,7 @@ public class PlayState : PauseGameHandler, IGameStateBase, IMouseBehaviour
         DeactiveGameObjects();
         ChangePauseTimeScale();
         ChangeMouseCursorBehaviour();
+        gameState._gameManager.AllowBallToMove();
     }
     private void DeactiveGameObjects()
     {
