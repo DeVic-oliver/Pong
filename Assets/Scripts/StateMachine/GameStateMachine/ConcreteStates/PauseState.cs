@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PauseState : PauseGameHandler, IGameStateBase, IMouseBehaviour, IRestartGame
 {
+    private GameStateManager _gameStateManager;
     public void OnStateEnter(GameStateManager gameState)
     {
         gameState.PauseMenu.SetActive(true);
+        _gameStateManager = gameState;
         SetGameObjectsActive();
         ChangeMouseCursorBehaviour();
         PauseGameBehaviour();
@@ -51,6 +53,7 @@ public class PauseState : PauseGameHandler, IGameStateBase, IMouseBehaviour, IRe
             PauseGameHandler.IsGamePaused = false;
             PauseGameHandler.ShouldResumeGame = false;
             gameState.SwitchState(gameState.PlayState);
+            _gameStateManager.SwitchState(_gameStateManager.RestartState);
         }
     }
  
