@@ -14,6 +14,7 @@ public class RestartState : PauseGameHandler, IGameStateBase
         gameState._gameManager._gameTimeHandler.ResetTime();
         gameState._gameManager.ball.RestartBallPosition();
         gameState._gameManager._gameScoreHandler.ResetPlayerPoints();
+
         GameStateManager.ShouldRestartGame = false;  
     }
 
@@ -21,7 +22,6 @@ public class RestartState : PauseGameHandler, IGameStateBase
     {
         CountToChangeState();
     }
-
     private void CountToChangeState()
     {
         if (stateChangerCounter > 0)
