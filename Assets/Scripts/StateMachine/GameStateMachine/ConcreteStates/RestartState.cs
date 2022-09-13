@@ -5,7 +5,7 @@ using UnityEngine;
 public class RestartState : PauseGameHandler, IGameStateBase
 {
     private float stateChangerCounter = 3f;
-    private GameStateManager _gameState;
+    private GameStateManager _gameStateManager;
     public void OnStateEnter(GameStateManager gameState)
     {
         Debug.Log("Entrou no restart state");

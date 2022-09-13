@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayState : PauseGameHandler, IGameStateBase, IMouseBehaviour
 {
-    private GameStateManager _gameState;
+    private GameStateManager _gameStateManager;
     public void OnStateEnter(GameStateManager gameState)
     {
         _gameState = gameState;
