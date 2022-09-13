@@ -8,6 +8,7 @@ public class GameOverState : IGameStateBase, IMouseBehaviour, IRestartGame
     public void OnStateEnter(GameStateManager gameState)
     {
         _gameStateManager = gameState;
+        gameState._gameManager._gameScoreHandler.SetGameWinner();
         gameState.GameOverMenu.SetActive(true);
         ChangeMouseCursorBehaviour();
     }
