@@ -16,7 +16,7 @@ public class RestartState : PauseGameHandler, IGameStateBase
         gameState._gameManager.DenyBallToMove();
         gameState._gameManager._gameTimeHandler.ResetTime();
         gameState._gameManager.ball.RestartBallPosition();
-        gameState._gameManager._gameScoreHandler.ResetPlayerPoints();
+        gameState._gameManager._gameScoreHandler.ResetScoreboard();
 
         GameStateManager.ShouldRestartGame = false;  
     }
