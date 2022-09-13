@@ -14,6 +14,7 @@ public class PlayState : PauseGameHandler, IGameStateBase, IMouseBehaviour
     }
     private void DeactiveGameObjects()
     {
+        _gameStateManager.PauseMenu.SetActive(false);
     }
     protected override void ChangePauseTimeScale()
     {
