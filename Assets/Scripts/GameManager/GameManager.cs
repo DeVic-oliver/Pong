@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public BallMovement ball;
     public GameTimeHandler _gameTimeHandler;
     public GameScoreHandler _gameScoreHandler;
+    public GameCloseHandler _gameCloseHandler;
 
     // Start is called before the first frame update
     void Start()
@@ -69,4 +70,6 @@ public class GameManager : MonoBehaviour
     {
         GameStateManager.ShouldRestartGame = true;
     }
+
+
 }
