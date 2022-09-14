@@ -29,18 +29,23 @@ public class GameScoreHandler : MonoBehaviour
     
     public void SetGameWinner()
     {
-        if(Player1Points.Points > Player2Points.Points) 
+        if(Player1.Points > Player2.Points) 
         {
-            winnerScoreboard.text += " Player 1 - " + Player1Points.Points + " points";
-        }else if (Player1Points.Points < Player2Points.Points)
+            WriteWinnerName(Player1);
+        }else if (Player1.Points < Player2.Points)
         {
-            winnerScoreboard.text += " Player 2 - " + Player2Points.Points + " points";
+            WriteWinnerName(Player2);
         }
         else
         {
             winnerScoreboard.text = "Draw Game!!!";
         }
     }
+    private void WriteWinnerName(Player player)
+    {
+        winnerScoreboard.text += $" {player.Name} - {player.Points}";
+    }
+
     public void ResetScoreboard()
     {
         winnerScoreboard.text = scoreBoardInitialText;
