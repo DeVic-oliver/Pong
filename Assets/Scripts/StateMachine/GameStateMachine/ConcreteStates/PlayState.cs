@@ -12,6 +12,7 @@ public class PlayState : PauseGameHandler, IGameStateBase, IMouseBehaviour
         ChangePauseTimeScale();
         ChangeMouseCursorBehaviour();
         gameState._gameManager.AllowBallToMove();
+        SetPlayerName();
     }
     private void DeactiveGameObjects()
     {
@@ -25,6 +26,10 @@ public class PlayState : PauseGameHandler, IGameStateBase, IMouseBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+    private void SetPlayerName()
+    {
+        Player.shouldNameSet = true;
     }
 
     public void UpdateState(GameStateManager gameState)
