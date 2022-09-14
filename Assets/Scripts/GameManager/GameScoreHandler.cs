@@ -4,8 +4,8 @@ using UnityEngine;
 using TMPro;
 public class GameScoreHandler : MonoBehaviour
 {
-    public Player Player1Points;
-    public Player Player2Points;
+    public Player Player1;
+    public Player Player2;
     [SerializeField] private TextMeshProUGUI player1Score;
     [SerializeField] private TextMeshProUGUI player2Score;
     [SerializeField] private TextMeshProUGUI winnerScoreboard;
@@ -23,8 +23,8 @@ public class GameScoreHandler : MonoBehaviour
     }
     private void UpdateScore()
     {
-        player1Score.text = Player1Points.Points.ToString();
-        player2Score.text = Player2Points.Points.ToString();
+        player1Score.text = Player1.Points.ToString();
+        player2Score.text = Player2.Points.ToString();
     }
     
     public void SetGameWinner()
@@ -48,7 +48,7 @@ public class GameScoreHandler : MonoBehaviour
     }
     private void ResetPlayerPoints()
     {
-        Player1Points.Points = 0;
-        Player2Points.Points = 0;
+        Player1.Points = 0;
+        Player2.Points = 0;
     }
 }
