@@ -21,12 +21,20 @@ public class GameOverState : IGameStateBase, IMouseBehaviour, IRestartGame
     public void UpdateState(GameStateManager gameState)
     {
         CheckIfShouldRestartGame();
+        CheckIfShouldBackToMainMenu();
     }
     public void CheckIfShouldRestartGame()
     {
         if (GameStateManager.ShouldRestartGame)
         {
             _gameStateManager.SwitchState(_gameStateManager.RestartState);
+        }
+    }
+    public void CheckIfShouldBackToMainMenu()
+    {
+        if (GameStateManager.ShouldBackToMainMenu)
+        {
+            _gameStateManager.SwitchState(_gameStateManager.StartState);
         }
     }
 
