@@ -4,12 +4,7 @@ using TMPro;
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
-    private bool canBeginGame = false;
-    public bool CanBeginGame 
-    { 
-        get { return canBeginGame; } 
-        private set { canBeginGame = value; } 
-    }
+    public bool CanBeginGame { get; set; }
 
     public BallMovement ball;
     public GameTimeHandler _gameTimeHandler;
@@ -71,5 +66,9 @@ public class GameManager : MonoBehaviour
         GameStateManager.ShouldRestartGame = true;
     }
 
+    public void BackToMainMenu()
+    {
+        GameStateManager.ShouldBackToMainMenu = true;
+    }
 
 }

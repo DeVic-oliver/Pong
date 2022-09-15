@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameStateManager : MonoBehaviour
 {
     public static bool ShouldRestartGame;
+    public static bool ShouldBackToMainMenu;
 
     #region Concrete Game States
     public StartState StartState = new StartState();
