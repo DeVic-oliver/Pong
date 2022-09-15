@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class Player : MonoBehaviour
 {
-    public static bool shouldNameSet = false;
+    public static bool shouldSetName = false;
 
     public int Points { get; set; }
     public string Name { get; private set; }
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     
     private void Update()
     {
-        if (shouldNameSet && !isNameSet)
+        if (shouldSetName && !isNameSet)
         {
             SetPlayerName();
             isNameSet = true;
@@ -25,4 +25,10 @@ public class Player : MonoBehaviour
         Name = nameInput.text;
         playerName.text = Name;
     }
+
+    public void ResetName()
+    {
+        isNameSet = false;
+    }
+
 }

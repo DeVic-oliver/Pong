@@ -29,7 +29,7 @@ public class PlayState : PauseGameHandler, IGameStateBase, IMouseBehaviour
     }
     private void SetPlayerName()
     {
-        Player.shouldNameSet = true;
+        Player.shouldSetName = true;
     }
 
     public void UpdateState(GameStateManager gameState)
