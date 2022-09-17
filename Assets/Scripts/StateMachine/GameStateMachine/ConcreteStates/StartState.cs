@@ -9,6 +9,7 @@ public class StartState : IGameStateBase, IMouseBehaviour
     public void OnStateEnter(GameStateManager gameState)
     {
         GameStateManager.ShouldBackToMainMenu = false;
+        Player.shouldSetName = false; 
         gameState._gameManager.CanBeginGame = false;
 
         ChangeMouseCursorBehaviour();
