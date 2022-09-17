@@ -14,6 +14,11 @@ public class BallBase : MonoBehaviour
         {
             collision.gameObject.GetComponent<IScoreable>().ApplyScore();
         }
+
+        if(collision.gameObject.GetComponent<ISoundPlayable>() != null)
+        {
+            collision.gameObject.GetComponent<ISoundPlayable>().PlaySound();
+        }
     }
 
     /// <summary>
