@@ -43,7 +43,7 @@ public class GameScoreHandler : MonoBehaviour
     }
     private void WriteWinnerName(Player player)
     {
-        winnerScoreboard.text += $" {player.Name} - {player.Points}";
+        winnerScoreboard.text += $"Winner: {player.Name} - {player.Points}";
     }
 
     public void ResetScoreboard()
